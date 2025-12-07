@@ -1,0 +1,2 @@
+This directory is managed by Slate. Do not edit files here directly.
+Edit files in the root 'static/' directory instead.
