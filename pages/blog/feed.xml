@@ -3,12 +3,12 @@
   <channel>
     <title>Welcome - Blog</title>
     <link>https://example.com/blog.html</link>
-    <description>Welcome to my website.</description>
+    <description> Hailey Welsh - Software developer, Linux enthusiast, and creator of Slate SSG. Explore my blog on web development, ThinkPad builds, Gentoo Linux, and multi-protocol web accessibility. Discover projects, showcase work, and contact details. </description>
     <ns0:link href="https://example.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Ultimate Thinkpad</title>
       <link>https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/the-ultimate-thinkpad.html</link>
-      <description>Building the ultimate Gentoo music ThinkPad from a T540P</description>
+      <description>Building the ultimate ThinkPad T540P with a PGA-adapted i7-4980HQ CPU, upgraded cooling, and Gentoo Linux. A detailed guide covering hardware mods, kernel customization, and WindowMaker setup.</description>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <author>Hailey Welsh</author>
       <guid isPermaLink="true">https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/the-ultimate-thinkpad.html</guid>
@@ -16,7 +16,7 @@
     <item>
       <title>Hello, Slate</title>
       <link>https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/hello-slate.html</link>
-      <description>My first blog post using Slate v0.2.7!</description>
+      <description>Introducing Slate v0.2.7 - my custom static site generator evolved from a simple transpiler to a full SSG with metadata tracking, relative links, and IPFS support.</description>
       <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
       <author>Hailey Welsh</author>
       <guid isPermaLink="true">https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/hello-slate.html</guid>
