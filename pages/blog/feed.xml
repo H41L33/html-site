@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Welcome - Blog</title>
+    <link>https://example.com/blog.html</link>
+    <description>Welcome to my website.</description>
+    <ns0:link href="https://example.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Ultimate Thinkpad</title>
+      <link>https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/the-ultimate-thinkpad.html</link>
+      <description>Building the ultimate Gentoo music ThinkPad from a T540P</description>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <author>Hailey Welsh</author>
+      <guid isPermaLink="true">https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/the-ultimate-thinkpad.html</guid>
+    </item>
+    <item>
+      <title>Hello, Slate</title>
+      <link>https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/hello-slate.html</link>
+      <description>My first blog post using Slate v0.2.7!</description>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <author>Hailey Welsh</author>
+      <guid isPermaLink="true">https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/blog/hello-slate.html</guid>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building the ultimate Gentoo music ThinkPad from a T540P">
+
+    <title>Hailey Welsh // The Ultimate Thinkpad</title>
+
+    <link rel="manifest" href="/static/assets/hailey_favicon_io/site.webmanifest">
+    <link rel="icon" href="/static/assets/hailey_favicon_io/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/static/assets/hailey_favicon_io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header-container">
+                <a href="" style="text-decoration: none;">
+                    <h1 class="header-title fancy-animate">The Ultimate Thinkpad</h1>
+                </a>
+                <div class="pfp-container fancy-animate">
+                    <a href="/html/index.html">
+                        <img src="/static/assets/new_hailey_face_small.jpg" alt="Hailey Welsh" class="profile-pic">
+                    </a>
+                </div>
+            </div>
+
+            <a href="../../index.html" class="content-nav_header">Welcome</a>
+<a href="../blog.html" class="content-nav_header">Blog</a>
+        </header>
+
+        <main class="content">
+            <!-- v0.2.6: Breadcrumbs -->
+            <div class="breadcrumbs"><nav class="breadcrumbs"><a href="../../index.html" class="breadcrumb">Welcome</a> <span class="breadcrumb-separator">/</span> <a href="../blog.html" class="breadcrumb">Blog</a> <span class="breadcrumb-separator">/</span> <a href="the-ultimate-thinkpad.html" class="breadcrumb current">The Ultimate Thinkpad</a></nav></div>
+
+            <!-- v0.2.6: Table of Contents -->
+            <h1 class="toc-title">Table of Contents</h1>
+            <div class="toc-container"><nav class="toc">
+  <ul>
+    <li class="toc-h1"><a href="#the-ultimate-thinkpad">The Ultimate ThinkPad</a>
+    <ul>
+    <li class="toc-h2"><a href="#introduction">Introduction</a></li>
+    <li class="toc-h2"><a href="#the-t540p">The T540P</a>
+    <ul>
+    <li class="toc-h3"><a href="#the-build-hardware">The Build - Hardware</a></li>
+    <li class="toc-h3"><a href="#the-build-software">The Build - Software</a></li>
+    </ul></li>
+    </ul></li>
+    <li class="toc-h1"><a href="#the-video">The Video</a>
+    <ul>
+    <li class="toc-h2"><a href="#chapter-1-building">Chapter 1 - Building</a>
+    <ul>
+    <li class="toc-h3"><a href="#scene-1-unboxing">Scene 1 - Unboxing</a></li>
+    <li class="toc-h3"><a href="#scene-2-building">Scene 2 - Building</a></li>
+    <li class="toc-h3"><a href="#scene-3-testing">Scene 3 - Testing</a></li>
+    </ul></li>
+    <li class="toc-h2"><a href="#chapter-2-gentoo-installation">Chapter 2 - Gentoo Installation</a>
+    <ul>
+    <li class="toc-h3"><a href="#scene-1-disks">Scene 1 - Disks</a></li>
+    <li class="toc-h3"><a href="#scene-2-stage3">Scene 2 - Stage3</a></li>
+    <li class="toc-h3"><a href="#scene-3-chroot">Scene 3 - Chroot</a></li>
+    <li class="toc-h3"><a href="#scene-4-kernel">Scene 4 - Kernel</a></li>
+    </ul></li>
+    </ul></li>
+  </ul>
+</nav></div>
+
+            <p class='content-paragraph'>[!TAG_ENTRIES]</p>
+<h1 id='the-ultimate-thinkpad' class='content-h1'>The Ultimate ThinkPad</h1>
+<h2 id='introduction' class='content-h2'>Introduction</h2>
+<div class="content-callout callout callout-note"><strong>Note</strong> <p class='content-paragraph'>This project was inspired by <a href="https://www.youtube.com/watch?v=vtkQiLkNgOI" class="content-external">Ionic1k&#x27;s &quot;Building the ultimate ThinkPad!&quot;</a>.</p></div>
+<p class='content-paragraph'>Since my foray into Linux some 5 or 6 years ago, ThinkPads (specifically the big, the bulky, the <strong class="content-strong">ancient</strong> ThinkPads) have always eluded me. I started on my desktop gaming PC, which, if I remember correctly, rocked a Ryzen 5 3600 with 16GB of RAM, a 1TB SSD, and an RX 590 (later upgraded to an RX 6800XT—man, I loved that card).</p>
+<p class='content-paragraph'>As my formal education progressed, the need for a mobile platform grew. I picked up an Acer Aspire laptop with what I think was a 5th gen Ryzen mobile chip. It was a solid machine and did what I needed it to do.</p>
+<p class='content-paragraph'>About a year later, however, I had a massive tonal shift in my technology, starting with an iPhone 15 Pro.</p>
+<p class='content-paragraph'>This relit the kid in me—the kid who loved Apple. I remember getting so excited to visit Apple Stores when I was small.</p>
+<p class='content-paragraph'>I had moved away from them mostly due to herd mentality, as I see now. I realised this when getting the iPhone 15 Pro... I had never actually given them an honest chance with a modern product.</p>
+<p class='content-paragraph'>It was the software for me, the design, the consistency (although they fumbled that shortly after with the universal 26 OS update, "Tahoe", Liquid Glass—which I actually really liked the design of, but my oh my was it buggy).</p>
+<p class='content-paragraph'>Having used the iPhone for a while, and as my laptop needs grew while my desktop PC needs diminished, I went all-in with a MacBook Air M2.</p>
+<p class='content-paragraph'>This was the end for me and Linux.</p>
+<p class='content-paragraph'>Sure, Asahi is a project, and it does work—I even used it! But the experience was, understandably, worse than macOS. The whole reason I had chosen an Apple laptop was for the integration and consistency of the ecosystem, which I forewent for the sake of Linux.</p>
+<p class='content-paragraph'>Fast forward to today, and I pulled the trigger. It's been years, the whole <code class="content-code">Wayland</code> vs <code class="content-code">Xorg</code> fiasco has come and gone, people have been polarised, and <code class="content-code">Wayland</code> will lead us into the future. It feels like the Star Wars OT now: <code class="content-code">Wayland</code> and <code class="content-code">Xorg</code> had a big fight, turmoil, deception, and then <code class="content-code">Wayland</code> won. Now there's peace, freedom, justice, and security.</p>
+<p class='content-paragraph'>Not saying that <code class="content-code">Wayland</code> is as evil as the Galactic Empire—those thoughts are for a different post. I'm just saying that <code class="content-code">Wayland</code> is the future, and it's time to move on from <code class="content-code">Xorg</code>.</p>
+<p class='content-paragraph'>So, in this calm Linux-scape we now find ourselves in, I think it's time I return to the promised land. Properly this time.</p>
+<h2 id='the-t540p' class='content-h2'>The T540P</h2>
+<p class='content-paragraph'>It's not the worshipped <strong class="content-strong">T480</strong>, or the highly regarded <strong class="content-strong">T440P</strong>. It's the larger, bulkier, more industrial cousin to both of them.</p>
+<p class='content-paragraph'>It's the <strong class="content-strong">T540P</strong>.</p>
+<p class='content-paragraph'>I chose this for a very specific reason... <strong class="content-strong">Cooling</strong>.</p>
+<p class='content-paragraph'>The <strong class="content-strong">T540P</strong> is slightly thicker than the <strong class="content-strong">T440P</strong> and much larger too, allowing more air to move around inside the chassis. This is critical, not because of the workloads I'm giving it, but because of the chip I'm shoving inside it.</p>
+<p class='content-paragraph'>Also, the <strong class="content-strong">T540P</strong> comes with a slower <strong class="content-strong">i5-4300</strong>, which is actually ideal for me since I'm replacing the CPU, which you'll see in a moment, and so I can save quite a significant chunk of change. The <strong class="content-strong">T540P</strong> cost me <strong class="content-strong">half</strong> of what the <strong class="content-strong">T440P</strong> would've.</p>
+<p class='content-paragraph'>And for that new CPU, I present to you, straight from the mystical promised land of China, couriered to my doorstep by the fabled AliExpress...</p>
+<p class='content-paragraph'><strong class="content-strong">A PGA-Adapted Core i7-4980HQ</strong>.</p>
+<p class='content-paragraph'>This chip cost me as much as the whole <strong class="content-strong">T540P</strong>, but my oh my was it worth it. Just to have something like this is cool, but to have it in a <strong class="content-strong">T540P</strong> chassis is even better.</p>
+<p class='content-paragraph'>This chip has a massive <strong class="content-strong">47W</strong> TDP. It's 4C, 8T @ 4.0GHz—an absolute unit. The very same chip was featured in the MacBook Pro in 2014 and 2015. Yes, my <strong class="content-strong">T540P</strong> is now a <strong class="content-strong">MacBook Pro</strong> from 10 years ago. When it was used in the MacBook Pro, however, it was a BGA (Ball-Grid-Array) chip. Theoretically, it works with anything Haswell, so finding them with PGA adapter boards is not too hard, especially due to the emergent subculture nursed by its usage and now e-waste abundance in old MacBooks and their demand for today's usage in ThinkPads. They're few and far between, but not impossible.</p>
+<p class='content-paragraph'>And I got one!</p>
+<p class='content-paragraph'>That chip means I need all the cooling room I can muster. I will also be tweaking the kernel and undervolting it to keep it in check, and I have a more capable heatsink to use.</p>
+<h3 id='the-build-hardware' class='content-h3'>The Build - Hardware</h3>
+<p class='content-paragraph'>Obviously, this <strong class="content-strong">T540P</strong> is not remaining stock. I have:</p>
+<ul class='content-ul'><li class='content-li'>A PGA-adapted Core i7-4980HQ</li><li class='content-li'>A more capable heatsink from a version of the laptop which had a dGPU.</li><li class='content-li'>A new pair of 2x8GB PC3L-12800S RAM modules, Samsung.</li></ul>
+<p class='content-paragraph'>And that's it for now. Tame. I wanted to keep the initial build small in case the whole thing fails. If it succeeds, however, I'll add in some luxuries, such as a (much) better trackpad, 9-cell battery, backlit keyboard, newer SSD, and a FHD IPS screen.</p>
+<h3 id='the-build-software' class='content-h3'>The Build - Software</h3>
+<p class='content-paragraph'>Obviously, out of the four Linux distributions that actually matter: Debian, RHEL, Arch, and Gentoo—Gentoo is the only one suitable for this build.</p>
+<p class='content-paragraph'>It's also my favourite.</p>
+<p class='content-paragraph'>The current stack is as follows:</p>
+<ul class='content-ul'><li class='content-li'>Gentoo Linux<ul class='content-ul'><li class='content-li'>OpenRC</li></ul></li><li class='content-li'>WindowMaker<ul class='content-ul'><li class='content-li'>Xorg</li></ul></li></ul>
+<p class='content-paragraph'>Didn't I just say the world has moved on to <code class="content-code">Wayland</code>? Yeah... Yeah I did. But <code class="content-code">Xorg</code> has that retro charm that you just can't get with <code class="content-code">Wayland</code>.</p>
+<p class='content-paragraph'>I'll also be using a customised kernel to keep the chip in check and extend the battery life. I would really love to have this laptop last long enough to justify using it for college one day. That would be sick.</p>
+<h1 id='the-video' class='content-h1'>The Video</h1>
+<p class='content-paragraph'>This section is now moving into the video of me building the laptop, which you can view <a href="!TODO" class="content-external">here</a>.</p>
+<h2 id='chapter-1-building' class='content-h2'>Chapter 1 - Building</h2>
+<h3 id='scene-1-unboxing' class='content-h3'>Scene 1 - Unboxing</h3>
+<p class='content-paragraph'>Unbox all the parts prior to recording, open with a shot of the desk with the laptop upside-down, the parts laid out around, and the iFixIt kit.</p>
+<p class='content-paragraph'>The lighting should start off as warm, and I should be wearing normal clothing.</p>
+<h3 id='scene-2-building' class='content-h3'>Scene 2 - Building</h3>
+<p class='content-paragraph'>Snap transition to purple lighting and a more Gentoo-like outfit (you know what I mean).</p>
+<p class='content-paragraph'>Begin by deconstructing the laptop, placing all parts to be replaced out-of-frame.</p>
+<p class='content-paragraph'>Bring each new part up to the camera, and show the process of installation.</p>
+<p class='content-paragraph'>Finish by putting the laptop back together, and showing the finished product.</p>
+<h3 id='scene-3-testing' class='content-h3'>Scene 3 - Testing</h3>
+<p class='content-paragraph'>Plug in the Ventoy drive, and boot into LMDE.</p>
+<p class='content-paragraph'>If successful, thumbs up and move on to the next scene.</p>
+<h2 id='chapter-2-gentoo-installation' class='content-h2'>Chapter 2 - Gentoo Installation</h2>
+<p class='content-paragraph'>Begin by opening terminal and the browser either-side, and go to this page.</p>
+<h3 id='scene-1-disks' class='content-h3'>Scene 1 - Disks</h3>
+<p class='content-paragraph'>Use <code class="content-code">lsblk</code> and <code class="content-code">cfdisk</code> to partition the disks:</p>
+<ul class='content-ul'><li class='content-li'>256MB EFI partition</li><li class='content-li'>2GB Swap partition</li><li class='content-li'>Remaining space for root partition</li></ul>
+<p class='content-paragraph'>Afterwards there should be:</p>
+<ul class='content-ul'><li class='content-li'>/dev/sda1 - EFI Partition</li><li class='content-li'>/dev/sda2 - Swap Partition</li><li class='content-li'>/dev/sda3 - Root Partition</li></ul>
+<p class='content-paragraph'>Initialise the filesystems:</p>
+<pre class='content-pre'><code class='content-code language-bash'>mkfs.fat -F 32 /dev/sda1
+mkswap /dev/sda2
+mkfs.ext4 /dev/sda3
+</code></pre>
+<p class='content-paragraph'>Create the mountpoints:</p>
+<pre class='content-pre'><code class='content-code language-bash'>mkdir --parents /mnt/gentoo
+</code></pre>
+<p class='content-paragraph'>Mount the root partition and activate the swap partition:</p>
+<pre class='content-pre'><code class='content-code language-bash'>mount /dev/sda3 /mnt/gentoo
+swapon /dev/sda2
+</code></pre>
+<p class='content-paragraph'>Mount the EFI partition:</p>
+<pre class='content-pre'><code class='content-code language-bash'>mount --mkdir /dev/sda1 /mnt/gentoo/efi
+</code></pre>
+<h3 id='scene-2-stage3' class='content-h3'>Scene 2 - Stage3</h3>
+<p class='content-paragraph'>Navigate to the installation directory:</p>
+<pre class='content-pre'><code class='content-code language-bash'>cd /mnt/gentoo
+</code></pre>
+<p class='content-paragraph'>Open the Gentoo <a href="https://www.gentoo.org/downloads/" class="content-external">downloads page</a> and download the latest stage3 tarball.</p>
+<div class="content-callout callout callout-tip"><strong>Tip</strong> <p class='content-paragraph'>This step may take a minute or two, time-lapse in the edit.</p></div>
+<p class='content-paragraph'>Extract the stage3 tarball:</p>
+<pre class='content-pre'><code class='content-code language-bash'>tar --xpvf ~/Downloads/stage3-*.tar.xz --xattrs-include=&#x27;*.*&#x27; --numeric-owner -C /mnt/gentoo
+</code></pre>
+<div class="content-callout callout callout-tip"><strong>Tip</strong> <p class='content-paragraph'>This step may take a minute or two, time-lapse in the edit.</p></div>
+<p class='content-paragraph'>Install <code class="content-code">arch-chroot</code> and <code class="content-code">genfstab</code>:</p>
+<pre class='content-pre'><code class='content-code language-bash'>sudo apt install arch-install-scripts
+</code></pre>
+<h3 id='scene-3-chroot' class='content-h3'>Scene 3 - Chroot</h3>
+<p class='content-paragraph'>Chroot into the new system:</p>
+<pre class='content-pre'><code class='content-code language-bash'>arch-chroot /mnt/gentoo
+</code></pre>
+<p class='content-paragraph'>Reminder that we're in a chroot:</p>
+<pre class='content-pre'><code class='content-code language-bash'>export PS1=&quot;(chroot) $PS1&quot;
+</code></pre>
+<p class='content-paragraph'>Emerge <code class="content-code">vim</code>:</p>
+<pre class='content-pre'><code class='content-code language-bash'>emerge app-editors/vim
+</code></pre>
+<div class="content-callout callout callout-tip"><strong>Tip</strong> <p class='content-paragraph'>This step may take a minute or two, time-lapse in the edit.</p></div>
+<p class='content-paragraph'>Replace the <code class="content-code">/etc/portage/make.conf</code> file with the following:</p>
+<pre class='content-pre'><code class='content-code language-bash'>COMMON_FLAGS=&quot;-O2 -pipe -fomit-frame-pointer -march=native&quot;
+CFLAGS=&quot;${COMMON_FLAGS}&quot;
+CXXFLAGS=&quot;${COMMON_FLAGS}&quot;
+FCFLAGS=&quot;${COMMON_FLAGS}&quot;
+RUSTFLAGS=&quot;${COMMON_FLAGS} -C target-cpu=native&quot;
+
+MAKEOPTS=&quot;-j8 -l8&quot;
+
+USE=&quot;-systemd -gnome -kde -wayland -accessibility \
+     -doc -man -handbook -test -examples \
+     -pipewire -pulseaudio -screencast \
+     X alsa vaapi dbus acpi usb git lto bluetooth \
+     udev x264 x265 mp3 flac vorbis opus \
+     grub&quot;
+
+FEATURES=&quot;nodoc noinfo noman&quot;
+
+VIDEO_CARDS=&quot;intel crocus&quot;
+INPUT_DEVICES=&quot;libinput synaptics&quot;
+ACCEPT_LICENSE=&quot;-* @FREE @BINARY-REDISTRIBUTABLE&quot;
+
+EMERGE_DEFAULT_OPTS=&quot;-av --with-bdeps=y&quot;
+</code></pre>
+<p class='content-paragraph'>Generate the fstab:</p>
+<pre class='content-pre'><code class='content-code language-bash'>genfstab -U /mnt/gentoo &gt;&gt; /etc/fstab
+</code></pre>
+<h3 id='scene-4-kernel' class='content-h3'>Scene 4 - Kernel</h3>
+<p class='content-paragraph'>Install the kernel sources & firmware:</p>
+<pre class='content-pre'><code class='content-code language-bash'>emerge sys-kernel/gentoo-sources sys-kernel/linux-firmware sys-apps/pciutils
+</code></pre>
+<div class="content-callout callout callout-tip"><strong>Tip</strong> <p class='content-paragraph'>This step may take a minute or two, time-lapse in the edit.</p></div>
+<p class='content-paragraph'>List available kernels:</p>
+<pre class='content-pre'><code class='content-code language-bash'>eselect kernel list
+</code></pre>
+<p class='content-paragraph'>Select the latest stable kernel:</p>
+<pre class='content-pre'><code class='content-code language-bash'>eselect kernel set 1
+</code></pre>
+<p class='content-paragraph'>Navigate to the kernel directory:</p>
+<pre class='content-pre'><code class='content-code language-bash'>cd /usr/src/linux
+</code></pre>
+<p class='content-paragraph'>Plug in everything that will possibly be used, and unplug everything that will not.</p>
+<p class='content-paragraph'>This could be mice, keyboards, headphones, usb drives (should already be loaded), bluetooth devices.</p>
+<p class='content-paragraph'>Make the locale built-in config:</p>
+<pre class='content-pre'><code class='content-code language-bash'>make localyesconfig
+</code></pre>
+<p class='content-paragraph'>Make the menuconfig:</p>
+<pre class='content-pre'><code class='content-code language-bash'>make menuconfig
+</code></pre>
+<p class='content-paragraph'>Verify these options:</p>
+<pre class='content-pre'><code class='content-code language-bash'>General setup.
+[*] POSIX Access Control Lists                                  (CONFIG_FS_POSIX_ACL)
+[*] Control Group support                                       (CONFIG_CGROUPS)
+[*] Namespaces support                                          (CONFIG_NAMESPACES)
+    [*] User namespace                                          (CONFIG_USER_NS)
+[*] Configure standard kernel features (expert users)           (CONFIG_EXPERT)
+    [ ] Load all symbols for debugging/ksymoops                 (CONFIG_KALLSYMS - Disable for speed/size)
+
+Processor type and features.
+    Processor family (Haswell)                                  (CONFIG_MCORE2)
+[*] Multi-core scheduler support                                (CONFIG_SCHED_MC)
+    Preemption Model (Voluntary Kernel Preemption (Desktop))    (CONFIG_PREEMPT_VOLUNTARY)
+    Timer frequency (300 HZ)                                    (CONFIG_HZ_300)
+[*] Tickless System (Dynamic Ticks)                             (CONFIG_NO_HZ)
+    (X) Idle dynticks system (NO_HZ_IDLE)                       (CONFIG_NO_HZ_IDLE)
+[*] EFI runtime service support                                 (CONFIG_EFI)
+[*] EFI stub support                                            (CONFIG_EFI_STUB)
+[*] MTRR (Memory Type Range Register) support                   (CONFIG_MTRR)
+
+Power management and ACPI options.
+[*] ACPI (Advanced Configuration and Power Interface) Support   (CONFIG_ACPI)
+    [*] Battery                                                 (CONFIG_ACPI_BATTERY)
+    [*] Video                                                   (CONFIG_ACPI_VIDEO)
+    [*] Button                                                  (CONFIG_ACPI_BUTTON)
+    CPU Frequency scaling
+        Default CPUFreq governor (powersave)                    (CONFIG_CPU_FREQ_GOV_POWERSAVE)
+        x86 CPU Frequency scaling drivers
+            [*] Intel P state control                           (CONFIG_X86_INTEL_PSTATE)
+
+Networking.
+[*] Wireless                                                    (CONFIG_WIRELESS)
+    [*] cfg80211 - wireless configuration API                   (CONFIG_CFG80211)
+    [*] Generic IEEE 802.11 Networking Stack (mac80211)         (CONFIG_MAC80211)
+[*] Bluetooth subsystem support                                 (CONFIG_BT)
+    Bluetooth device drivers
+        [*] HCI USB driver                                      (CONFIG_BT_HCIBTUSB)
+
+Device drivers.
+    Network device support
+        [*] Ethernet driver support
+            [*] Intel devices
+                [*] Intel(R) PRO/1000 PCI-Express Gigabit       (CONFIG_E1000E)
+
+    Multimedia support                                          (CONFIG_MEDIA_SUPPORT)
+        [*] Cameras/video grabbers support
+            Media drivers
+                [*] Media USB Adapters
+                    [*] USB Video Class (UVC)                   (CONFIG_USB_VIDEO_CLASS)
+
+    Graphics support
+        [*] Direct Rendering Manager (DRM)                      (CONFIG_DRM)
+        [*] Intel 8xx/9xx/G3x/G4x/HD Graphics                   (CONFIG_DRM_I915)
+
+    Sound card support
+        [*] Advanced Linux Sound Architecture                   (CONFIG_SND)
+            [*] HD-Audio                                        (CONFIG_SND_HDA_INTEL)
+                [*] Build Realtek HD-audio codec support        (CONFIG_SND_HDA_CODEC_REALTEK)
+                [*] Build HDMI/DisplayPort HD-audio codec       (CONFIG_SND_HDA_CODEC_HDMI)
+            [*] USB sound devices
+                [*] USB Audio/MIDI driver                       (CONFIG_SND_USB_AUDIO)
+
+    Input device support
+        [*] Mice
+            [*] PS/2 mouse                                      (CONFIG_MOUSE_PS2)
+                [*] Synaptics PS/2 mouse protocol               (CONFIG_MOUSE_PS2_SYNAPTICS)
+
+    Hardware Monitoring support
+        [*] Intel Core/Core2/Atom temperature sensor            (CONFIG_SENSORS_CORETEMP)
+        [*] ACPI Thermal Model                                  (CONFIG_SENSORS_ACPI_POWER)
+
+    USB support
+        [*] xHCI HCD (USB 3.0) support                          (CONFIG_USB_XHCI_HCD)
+        [*] EHCI HCD (USB 2.0) support                          (CONFIG_USB_EHCI_HCD)
+
+    MMC/SD/SDIO card support
+        [*] Realtek PCI-E SD/MMC Card Interface Driver          (CONFIG_MMC_REALTEK_PCI)
+
+    X86 Platform Specific Device Drivers
+        [*] ThinkPad ACPI Laptop Extras                         (CONFIG_THINKPAD_ACPI)
+            [*] Console audio control ALSA interface            (CONFIG_THINKPAD_ACPI_ALSA_SUPPORT)
+
+File systems.
+    [*] The Extended 4 (ext4) filesystem                        (CONFIG_EXT4_FS)
+    [*] Btrfs filesystem support                                (CONFIG_BTRFS_FS)
+    
+    CD-ROM/DVD Filesystems
+        [*] ISO 9660 CDROM file system support                  (CONFIG_ISO9660_FS)
+        [*] Microsoft Joliet CDROM extensions                   (CONFIG_JOLIET)
+        [*] UDF file system support                             (CONFIG_UDF_FS)
+
+    DOS/FAT/EXFAT/NT Filesystems
+        [*] MSDOS fs support                                    (CONFIG_MSDOS_FS)
+        [*] VFAT (Windows-95) fs support                        (CONFIG_VFAT_FS)
+        [*] exFAT filesystem support                            (CONFIG_EXFAT_FS)
+        [*] NTFS file system support                            (CONFIG_NTFS_FS)
+</code></pre>
+<p class='content-paragraph'>Make the kernel & install:</p>
+<pre class='content-pre'><code class='content-code language-bash'>make -j$(nproc) &amp;&amp; make modules_install &amp;&amp; make install
+</code></pre>
+<div class="content-callout callout callout-warning"><strong>Warning</strong> <p class='content-paragraph'>This is going to take a VERY LONG TIME. Go to work, or sleep, or a quick weekend getaway.</p></div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-text">
+                © 2025 Hailey Welsh • <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> • Made with
+                ❤️
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/H41L33"><img class="fancy-animate" src="/static/assets/icons8-github.svg"
+                        alt="My GitHub Profile"></a>
+                <a href="https://www.linkedin.com/in/hw220907/"><img class="fancy-animate"
+                        src="/static/assets/icons8-linkedin.svg" alt="My LinkedIn Profile"></a>
+            </div>
+            <div class="footer-generation-information">
+                Page built with slate v0.2.8 on 2025-12-05 at 18:02, last updated at 07/12/2025 at 18:04.
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/index.js"></script>
+</body>
+
+</html>
+<!-- slate: {"source": "/Users/hailey/Documents/Ventures/Omnisite/content/blog/the-ultimate-thinkpad.md", "template": "/Users/hailey/Documents/Ventures/Omnisite/templates/page.html", "creation_date": "2025-12-05", "creation_time": "18:02"} -->
