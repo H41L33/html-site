@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Welcome - Showcase</title>
+    <link>https://example.com/showcase.html</link>
+    <description> Hayden Ellis Clarke - Software developer, Linux enthusiast, and creator of Slate SSG. Explore my blog on web development, ThinkPad builds, Gentoo Linux, and multi-protocol web accessibility. Discover projects, showcase work, and contact details. </description>
+    <ns0:link href="https://example.com/showcase/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Slate Token Reference</title>
+      <link>https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/showcase/slate-tokens.html</link>
+      <description>A comprehensive list of all supported featured and custom tokens available in Slate templates and Markdown content.</description>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <author>Hayden</author>
+      <guid isPermaLink="true">https://example.com//Users/hailey/Documents/Ventures/Omnisite/pages/showcase/slate-tokens.html</guid>
+    </item>
+  </channel>
+</rss>

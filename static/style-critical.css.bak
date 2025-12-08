@@ -2,6 +2,7 @@
 /* CRITICAL STYLES - Inlined for fast initial render                                             */
 /*================================================================================================*/
 
+
 /* VARIABLES */
 :root {
     color-scheme: light dark;
@@ -118,17 +119,6 @@ p {
     overflow: clip;
 }
 
-.content {
-    align-self: start;
-    color: var(--text);
-    max-width: min(100%, 60rem);
-    margin-top: 2rem;
-}
-
-.content> :first-child {
-    margin-top: 0;
-}
-
 /* HEADER */
 .header {
     background-color: var(--background);
@@ -192,7 +182,6 @@ p {
     border-radius: 0.5rem;
 }
 
-/* BREADCRUMBS */
 .breadcrumbs {
     color: var(--text);
     font-size: 0.9rem;
@@ -207,6 +196,93 @@ p {
 
 .breadcrumbs a:hover {
     text-decoration: underline;
+}
+
+/* CONTENT */
+.content {
+    align-self: start;
+    color: var(--text);
+    max-width: min(100%, 60rem);
+    margin-top: 2rem;
+}
+
+.content> :first-child {
+    margin-top: 0;
+}
+
+.content-paragraph {
+    line-height: 1.6;
+    margin: 1rem 0 0;
+    text-align: justify;
+}
+
+.content-h1 {
+    font-size: 2.5rem;
+    margin-top: 4rem;
+}
+
+.content-h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.content-h3 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+/* Links */
+.content-link,
+.content-md_page,
+.content-external,
+.footer-text a {
+    color: var(--accent);
+    display: inline-block;
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+}
+
+/* Code */
+.content-code {
+    background: var(--background-hover);
+    color: var(--accent);
+    font-family: var(--font-family-mono);
+    font-size: 0.9em;
+    padding: 0 0.4em;
+}
+
+.content-pre {
+    background: var(--background-hover);
+    color: var(--text);
+    line-height: 1.5;
+    margin: 1.5rem 0 0;
+    overflow-x: auto;
+    padding: 1.5rem;
+}
+
+.content-pre code {
+    background: transparent;
+    color: inherit;
+    font-size: 0.875rem;
+    padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .content-pre {
+        background: #0d0d0d;
+    }
+}
+
+/* Lists */
+.content-ul,
+.content-ol {
+    margin: 1rem 0 0;
+    padding-left: 2rem;
+}
+
+.content-li {
+    line-height: 1.6;
+    margin: 0.5rem 0 0;
 }
 
 /* FOOTER */
@@ -225,19 +301,6 @@ p {
     color: var(--text);
     cursor: default;
     font-size: 0.9rem;
-}
-
-.footer-text a {
-    color: var(--accent);
-    display: inline-block;
-    font-weight: var(--font-weight-medium);
-    text-decoration: none;
-}
-
-.footer-text a:hover {
-    text-decoration: underline;
-    transform: translate(0, -0.2em) rotate(2deg);
-    transition: all 200ms ease;
 }
 
 .footer-generation-information {
@@ -280,43 +343,4 @@ p {
     .footer-links {
         justify-content: center;
     }
-}
-
-/* ANIMATIONS (Critical - used in Header) */
-.fancy-animate,
-.header-title,
-.pfp-container,
-.header nav a,
-.content-nav_header,
-.footer-links img,
-.collection_entry {
-    display: inline-block;
-    transform: translate(0, 0) rotate(0deg);
-    transition: all 200ms ease;
-}
-
-.fancy-animate:hover,
-.header-title:hover,
-.pfp-container:hover,
-.header nav a:hover,
-.content-nav_header:hover,
-.footer-links img:hover,
-.collection_entry:hover {
-    transform: translate(0, -0.5em) rotate(4deg);
-}
-
-.header-title:hover {
-    background-color: var(--accent-background);
-}
-
-.pfp-container:hover {
-    background-color: var(--accent-background);
-}
-
-.header nav a:hover,
-.content-nav_header:hover,
-.content-nav_header a:hover {
-    background-color: var(--accent-background);
-    color: var(--accent);
-    border-radius: 0.5rem;
 }

@@ -233,7 +233,8 @@
 }
 
 .header nav a:hover,
-.content-nav_header:hover {
+.content-nav_header:hover,
+.content-nav_header a:hover {
     background-color: var(--accent-background);
     color: var(--accent);
     border-radius: 0.5rem;

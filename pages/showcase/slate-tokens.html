@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive list of all supported featured and custom tokens available in Slate templates and Markdown content.">
+
+    <title>Hayden - Slate Token Reference</title>
+
+    <link rel="manifest" href="https://about.haileywelsh.me/static/favicon_io/site.webmanifest">
+    <link rel="icon" href="https://about.haileywelsh.me/static/favicon_io/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="https://about.haileywelsh.me/static/favicon_io/apple-touch-icon.png">
+
+    <!-- Preload fonts (non-blocking) -->
+    <link rel="preload" href="https://about.haileywelsh.me/static/fonts/instrument-sans-400.ttf" as="font" type="font/ttf"
+        crossorigin>
+    <link rel="preload" href="https://about.haileywelsh.me/static/fonts/instrument-sans-700.ttf" as="font" type="font/ttf"
+        crossorigin>
+
+    <!-- Load fonts asynchronously -->
+    <link rel="preload" href="https://about.haileywelsh.me/static/fonts.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://about.haileywelsh.me/static/fonts.css">
+    </noscript>
+
+    <link rel="stylesheet" href="https://about.haileywelsh.me/static/style.css">
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header-container">
+                <a href="https://about.haileywelsh.me/index.html" style="text-decoration: none;">
+                    <h1 class="header-title fancy-animate">Slate Token Reference</h1>
+                </a>
+                <div class="pfp-container fancy-animate">
+                    <a href="https://about.haileywelsh.me/index.html">
+                        <img srcset="https://about.haileywelsh.me/static/assets/pfp-40.jpg 40w,
+                                     https://about.haileywelsh.me/static/assets/pfp-64.jpg 64w,
+                                     https://about.haileywelsh.me/static/assets/pfp-128.jpg 128w,
+                                     https://about.haileywelsh.me/static/assets/pfp.jpg 256w" sizes="(max-width: 768px) 40px, 64px"
+                            src="https://about.haileywelsh.me/static/assets/pfp-64.jpg" alt="Hailey Welsh" class="profile-pic"
+                            width="64" height="64" loading="eager">
+                    </a>
+                </div>
+            </div>
+
+            <a href="../../index.html" class="content-nav_header">Welcome</a>
+<a href="../showcase.html" class="content-nav_header">Showcase</a>
+<a href="../blog.html" class="content-nav_header">Blog</a>
+        </header>
+
+        <main class="content">
+            <!-- v0.2.6: Breadcrumbs -->
+            <div class="breadcrumbs"><nav class="breadcrumbs"><a href="../../index.html" class="breadcrumb">Welcome</a> <span class="breadcrumb-separator">/</span> <a href="../showcase.html" class="breadcrumb">Showcase</a> <span class="breadcrumb-separator">/</span> <a href="slate-tokens.html" class="breadcrumb current">Slate Token Reference</a></nav></div>
+
+            <!-- v0.2.6: Table of Contents -->
+            <h1 class="toc-title">Table of Contents</h1>
+            <div class="toc-container"><nav class="toc">
+  <ul>
+    <li class="toc-h1"><a href="#slate-token-reference">Slate Token Reference</a>
+    <ul>
+    <li class="toc-h2"><a href="#standard-template-variables">Standard Template Variables</a>
+    <ul>
+    <li class="toc-h3"><a href="#content-metadata">Content & Metadata</a></li>
+    <li class="toc-h3"><a href="#dates-times">Dates & Times</a></li>
+    <li class="toc-h3"><a href="#navigation-structure">Navigation & Structure</a></li>
+    </ul></li>
+    <li class="toc-h2"><a href="#custom-markdown-tokens-token">Custom Markdown Tokens (`[!TOKEN]`)</a>
+    <ul>
+    <li class="toc-h3"><a href="#formatting-layout">Formatting & Layout</a></li>
+    <li class="toc-h3"><a href="#special-features">Special Features</a></li>
+    </ul></li>
+    <li class="toc-h2"><a href="#examples">Examples</a>
+    <ul>
+    <li class="toc-h3"><a href="#smart-link-to-markdown-file">Smart Link to Markdown File</a></li>
+    <li class="toc-h3"><a href="#action-button">Action Button</a></li>
+    <li class="toc-h3"><a href="#external-resource-link">External Resource Link</a></li>
+    <li class="toc-h3"><a href="#tipping-section">Tipping Section</a></li>
+    <li class="toc-h3"><a href="#callouts">Callouts</a></li>
+    </ul></li>
+    </ul></li>
+  </ul>
+</nav></div>
+
+            <h1 id='slate-token-reference' class='content-h1'>Slate Token Reference</h1>
+<p class='content-paragraph'>This document provides a comprehensive list of all supported featured and custom tokens available in Slate templates and Markdown content.</p>
+<h2 id='standard-template-variables' class='content-h2'>Standard Template Variables</h2>
+<div class="content-callout callout callout-note"><strong>Note</strong> <p class='content-paragraph'>All variables below must be wrapped in double curly braces when used in templates, for example: ``.</p></div>
+<p class='content-paragraph'>These variables can be used in your Jinja2 templates (e.g., <code class="content-code">templates/default.html</code>) or within your Markdown content if enabled.</p>
+<h3 id='content-metadata' class='content-h3'>Content & Metadata</h3>
+<div class='table-wrapper'><table class='content-table'><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td><code class="content-code">content</code></td><td>The rendered HTML content of the page.</td></tr><tr><td><code class="content-code">title</code></td><td>The title of the page (from frontmatter or first heading).</td></tr><tr><td><code class="content-code">description</code></td><td>The page description (from frontmatter).</td></tr><tr><td><code class="content-code">version</code></td><td>The current version of Slate being used to build the site.</td></tr><tr><td><code class="content-code">site_root</code></td><td>The root URL of the site (useful for absolute linking).</td></tr></tbody></table></div>
+<h3 id='dates-times' class='content-h3'>Dates & Times</h3>
+<div class='table-wrapper'><table class='content-table'><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td><code class="content-code">creation_date</code></td><td>The creation date of the file (DD/MM/YYYY).</td></tr><tr><td><code class="content-code">creation_time</code></td><td>The creation time of the file (HH:MM).</td></tr><tr><td><code class="content-code">modify_date</code></td><td>The last modification date.</td></tr><tr><td><code class="content-code">modify_time</code></td><td>The last modification time.</td></tr><tr><td><code class="content-code">datetime</code></td><td>Combined creation date and time.</td></tr></tbody></table></div>
+<h3 id='navigation-structure' class='content-h3'>Navigation & Structure</h3>
+<div class='table-wrapper'><table class='content-table'><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td><code class="content-code">nav_header</code></td><td>HTML links to all collection root pages (for the top navigation).</td></tr><tr><td><code class="content-code">nav_collection</code></td><td>HTML list of entries for the current collection (shows on collection root pages).</td></tr><tr><td><code class="content-code">collection_name</code></td><td>The name of the collection the current page belongs to.</td></tr><tr><td><code class="content-code">breadcrumbs</code></td><td>Breadcrumb navigation HTML.</td></tr><tr><td><code class="content-code">toc</code></td><td>Auto-generated Table of Contents for the current page.</td></tr><tr><td><code class="content-code">entries</code></td><td>A list of entry objects for the current collection (allows custom iteration in templates).</td></tr></tbody></table></div>
+<div class="content-callout callout callout-note"><strong>Note</strong> <p class='content-paragraph'>Some older templates may reference <code class="content-code">nav_category</code>. This is an alias/legacy name for <code class="content-code">nav_collection</code>.</p></div>
+<h2 id='custom-markdown-tokens-token' class='content-h2'>Custom Markdown Tokens (<code class="content-code">[!TOKEN]</code>)</h2>
+<p class='content-paragraph'>Slate supports custom syntax extensions to enhance your Markdown content. These are processed before HTML rendering.</p>
+<h3 id='formatting-layout' class='content-h3'>Formatting & Layout</h3>
+<div class='table-wrapper'><table class='content-table'><thead><tr><th>Token</th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td><strong class="content-strong">MD-PAGE</strong></td><td><code class="content-code">[!MD-PAGE] [Label](path/to/file.md)</code></td><td>Smart link to another Markdown file. Automatically converts <code class="content-code">.md</code> extension to <code class="content-code">.html</code> in output.</td></tr><tr><td><strong class="content-strong">BUTTON</strong></td><td><code class="content-code">[!BUTTON] [Label](URL)</code></td><td>Renders a styled button element linking to the URL.</td></tr><tr><td><strong class="content-strong">EXTERNAL</strong></td><td><code class="content-code">[!EXTERNAL] [Label](URL)</code></td><td>Renders a link styled as an external resource (often with an icon). Auto-detects protocols like <code class="content-code">gemini://</code>, <code class="content-code">gopher://</code>, etc.</td></tr></tbody></table></div>
+<h3 id='special-features' class='content-h3'>Special Features</h3>
+<div class='table-wrapper'><table class='content-table'><thead><tr><th>Token</th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td><strong class="content-strong">TIP</strong></td><td><code class="content-code">[!TIP]</code></td><td>Renders a "Support" section with donation links defined in your page's frontmatter (under <code class="content-code">tipping</code>).</td></tr></tbody></table></div>
+<h2 id='examples' class='content-h2'>Examples</h2>
+<h3 id='smart-link-to-markdown-file' class='content-h3'>Smart Link to Markdown File</h3>
+<p class='content-paragraph'>Syntax:</p>
+<pre class='content-pre'><code class='content-code language-markdown'>[!MD-PAGE] [Read the Guide](guide.md)
+</code></pre>
+<p class='content-paragraph'>Result:
+<a href="guide.html" class="content-md_page">Read the Guide</a></p>
+<h3 id='action-button' class='content-h3'>Action Button</h3>
+<p class='content-paragraph'>Syntax:</p>
+<pre class='content-pre'><code class='content-code language-markdown'>[!BUTTON] [Download Now](https://example.com/download)
+</code></pre>
+<p class='content-paragraph'>Result:
+<button class="content-button" onclick="window.location.href='https://example.com/download'">Download Now</button></p>
+<h3 id='external-resource-link' class='content-h3'>External Resource Link</h3>
+<p class='content-paragraph'>Syntax:</p>
+<pre class='content-pre'><code class='content-code language-markdown'>[!EXTERNAL] [Visit GitHub](https://github.com)
+</code></pre>
+<p class='content-paragraph'>Result:
+<a href="https://github.com" class="content-external">Visit GitHub</a></p>
+<h3 id='tipping-section' class='content-h3'>Tipping Section</h3>
+<p class='content-paragraph'><em class="content-em">(Requires <code class="content-code">tipping</code> frontmatter)</em>
+Syntax:</p>
+<pre class='content-pre'><code class='content-code language-markdown'>[!TIP]
+</code></pre>
+<p class='content-paragraph'>Result:
+<div class="content-tip"><strong>Support:</strong> <span class="content-tip-option"><strong>ETH:</strong> h41l33.uni.eth</span></div></p>
+<h3 id='callouts' class='content-h3'>Callouts</h3>
+<p class='content-paragraph'>Syntax:</p>
+<pre class='content-pre'><code class='content-code language-markdown'>&gt; [!NOTE]
+&gt; This is a note callout.
+</code></pre>
+<p class='content-paragraph'>Result:</p>
+<div class="content-callout callout callout-note"><strong>Note</strong> <p class='content-paragraph'>This is a note callout.</p></div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-text">
+                © 2025 Hailey Welsh • <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> • Made with
+                ❤️
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/H41L33"><img class="fancy-animate"
+                        src="https://about.haileywelsh.me/static/assets/icons8-github.svg" alt="My GitHub Profile" width="24"
+                        height="24"></a>
+                <a href="https://www.linkedin.com/in/hw220907/"><img class="fancy-animate"
+                        src="https://about.haileywelsh.me/static/assets/icons8-linkedin.svg" alt="My LinkedIn Profile" width="24"
+                        height="24"></a>
+            </div>
+            <div class="footer-generation-information">
+                Page built with slate v0.2.8 on 2025-12-08 at 11:41, last updated at 08/12/2025 at 14:29.
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://about.haileywelsh.me/static/index.js"></script>
+</body>
+
+</html>
+<!-- slate: {"source": "/Users/hailey/Documents/Ventures/Omnisite/content/showcase/slate-tokens.md", "template": "/Users/hailey/Documents/Ventures/Omnisite/templates/page.html", "creation_date": "2025-12-08", "creation_time": "11:41"} -->
